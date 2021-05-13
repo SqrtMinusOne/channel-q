@@ -1,4 +1,4 @@
-(define-module (channel-q packages yadm)
+(define-module (channel-q packages yadm-module)
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (guix build-system gnu)
