@@ -2,7 +2,8 @@
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (guix build-system gnu)
-  #:use-module (guix git-download))
+  #:use-module (guix git-download)
+  #:use-module (gnu packages ncurses))
 
 (define-public dt-colorscripts
   (package
@@ -37,6 +38,8 @@
                                   (install-file "colorscript" bin)
                                   (install-file "colorscript.1" man)
                                   (copy-recursively "colorscripts" (string-append opt "/colorscripts"))))))))
+   (propagated-inputs
+    `(("ncurses" ,ncurses)))
    (synopsis "A collection of terminal color scripts DT has accumulated over the years")
    (home-page "https://gitlab.com/dwt1/shell-color-scripts")
    (license isc)
