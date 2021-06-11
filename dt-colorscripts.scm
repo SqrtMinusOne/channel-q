@@ -42,6 +42,6 @@
     `(("ncurses" ,ncurses)))
    (synopsis "A collection of terminal color scripts DT has accumulated over the years")
    (home-page "https://gitlab.com/dwt1/shell-color-scripts")
-   (license isc)
+   (license expat)
    (description "A collection of terminal color scripts I've accumulated over the years.
 Included 52 beautiful terminal color scripts.")))
