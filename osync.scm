@@ -30,6 +30,10 @@
       #:validate-runpath? #f
       #:phases
       (modify-phases %standard-phases
+                     (add-after 'unpack 'patch-file-names
+                                (lambda _
+                                  ;; Silence beta warining. Otherwise the exitcode is not zero
+                                  (substitute* "osync.sh" (("IS_STABLE=false") "IS_STABLE=true"))))
                      (delete 'bootstrap)
                      (delete 'configure)
                      (delete 'build)
