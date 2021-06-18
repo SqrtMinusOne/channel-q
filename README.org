@@ -5,12 +5,13 @@ My Guix channel.
 I'll probably push what I can upstream when I figure Guix out.
 
 * Status
-| Software        | Status | Problems                                     |
-|-----------------+--------+----------------------------------------------|
-| [[https://gitlab.com/dwt1/shell-color-scripts][dt-colorscripts]] | OK     | Check for implicit dependencies              |
-| [[https://yadm.io/][yadm]]            | OK     | Check for implicit dependencies; description |
-| [[https://github.com/SqrtMinusOne/mpd-watcher][mpd-watcher]]     | OK     |                                              |
-| [[https://github.com/risacher/sunwait][sunwait]]         | OK     | Version number                               |
-| [[https://github.com/deajan/osync][osync]]           | Works  | Requires shell commands as propagated-inputs |
-| [[https://starship.rs/][starship]]        | Works  | Tests fail                                   |
-| [[https://github.com/gauteh/lieer][lieer]]           | Works  | Tests fail for dependencies                  |
+| Software        | Status   | Problems                                     |
+|-----------------+----------+----------------------------------------------|
+| [[https://gitlab.com/dwt1/shell-color-scripts][dt-colorscripts]] | OK       | Check for implicit dependencies              |
+| [[https://yadm.io/][yadm]]            | OK       | Check for implicit dependencies; description |
+| [[https://github.com/SqrtMinusOne/mpd-watcher][mpd-watcher]]     | OK       |                                              |
+| [[https://github.com/risacher/sunwait][sunwait]]         | OK       | Version number                               |
+| [[https://github.com/deajan/osync][osync]]           | Works    | Requires shell commands as propagated-inputs |
+| [[https://starship.rs/][starship]]        | Works    | Tests fail                                   |
+| [[https://github.com/gauteh/lieer][lieer]]           | Works    | Tests fail for dependencies                  |
+| [[https://activitywatch.net/][ActivityWatch]]   | Works... | Except for aw-qt. Installation from binaries |
