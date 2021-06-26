@@ -10,14 +10,6 @@
   #:use-module (gnu packages flex)
   #:use-module (gnu packages bison))
 
-(map (lambda (file)
-       (map (lambda (program)
-              (substitute* file
-                           ((program)
-                            (string-append "/dummy" "/src/" program))))
-            '("dgrep" "strptime" "dzone" "dadd" "dtest" "ddiff" "dconv" "dseq" "dsort" "dround")))
-     (find-files "./test" "\\.clit$"))
-
 (define-public clitoris
   (package
    (name "clitoris")
