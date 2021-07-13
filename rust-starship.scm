@@ -1507,10 +1507,10 @@ repositories.
     (description "Small and lightweight HTTP client")
     (license license:mpl2.0)))
 
-(define-public rust-starship-0.55
+(define-public rust-starship-0.53
   (package
    (name "rust-starship")
-   (version "0.55.0")
+   (version "0.53.0")
    (source
     (origin
      (method url-fetch)
@@ -1519,7 +1519,7 @@ repositories.
       (string-append name "-" version ".tar.gz"))
      (sha256
       (base32
-       "1cnbcmwxzvfpl66qng876vz9481wp6ag8x734rlya6n02g3blyhz"))))
+       "1l4yr4b02nm7l199yfx7m3li3kl7sl4mrv5ah8pnvrfr4gbmpa0x"))))
    (build-system cargo-build-system)
    (arguments
     `(#:tests? #f
@@ -1537,7 +1537,7 @@ repositories.
        ("rust-indexmap" ,rust-indexmap-1)
        ("rust-log" ,rust-log-0.4)
        ("rust-native-tls" ,rust-native-tls-0.2)
-       ("rust-nix" ,rust-nix-0.21)
+       ("rust-nix" ,rust-nix-0.20)
        ("rust-notify-rust" ,rust-notify-rust-4)
        ("rust-once-cell" ,rust-once-cell-1)
        ("rust-open" ,rust-open-1)
@@ -1551,7 +1551,7 @@ repositories.
        ("rust-rayon" ,rust-rayon-1)
        ("rust-regex" ,rust-regex-1)
        ("rust-rust-ini" ,rust-rust-ini-0.17)
-       ("rust-semver" ,rust-semver-1)
+       ("rust-semver" ,rust-semver-0.11)
        ("rust-serde" ,rust-serde-1)
        ("rust-serde-json" ,rust-serde-json-1)
        ("rust-shadow-rs" ,rust-shadow-rs-0.5)
