@@ -16,6 +16,7 @@ I'll probably push what I can upstream when I figure Guix out.
 | [[https://github.com/latex-lsp/texlab/][texlab]]                     | Works    | Installation from binaries                            |
 | [[https://gohugo.io/][hugo]]                       | Works    | Installation from binaries                            |
 | [[https://www.nushell.sh/][nushell]]                    | Works    | Installation from binaries (Guix version is outdated) |
+| [[https://github.com/atreyasha/i3-balance-workspace][i3-balance-workspace]]       | Works    | Tests fail                                            |
 | [[https://github.com/tmux-python/tmuxp][tmuxp]]                      | Works    | Tests fail                                            |
 | [[https://github.com/hroptatyr/dateutils][dateutils]]                  | Works    | Tests fail                                            |
 | [[https://starship.rs/][starship]]                   | Works    | Tests fail                                            |
