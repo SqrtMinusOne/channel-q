@@ -20,6 +20,8 @@
        (uri (pypi-uri "httplib2" version))
        (sha256
         (base32 "1p6q0qj8lii1qbjh2zggw2z9a7h25czm0b5mph37bv5w5wfnh174"))))
+    (arguments
+     '(#:tests? #f))
     (build-system python-build-system)
     (propagated-inputs (list python-pyparsing))
     (home-page "https://github.com/httplib2/httplib2")
