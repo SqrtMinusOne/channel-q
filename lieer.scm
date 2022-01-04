@@ -5,9 +5,27 @@
   #:use-module (guix build-system python)
   #:use-module (gnu packages time)
   #:use-module (gnu packages protobuf)
+  #:use-module (gnu packages python-build)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-web)
   #:use-module (gnu packages mail))
+
+(define-public python-httplib20
+  (package
+    (name "python-httplib2")
+    (version "0.20.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "httplib2" version))
+       (sha256
+        (base32 "1p6q0qj8lii1qbjh2zggw2z9a7h25czm0b5mph37bv5w5wfnh174"))))
+    (build-system python-build-system)
+    (propagated-inputs (list python-pyparsing))
+    (home-page "https://github.com/httplib2/httplib2")
+    (synopsis "A comprehensive HTTP client library.")
+    (description "This package provides a comprehensive HTTP client library.")
+    (license license:expat)))
 
 (define-public python-futures
   (package
@@ -102,7 +120,7 @@
      '(#:tests? #f))
     (propagated-inputs
      `(("python-google-auth" ,python-google-auth)
-       ("python-httplib2" ,python-httplib2)
+       ("python-httplib2" ,python-httplib20)
        ("python-six" ,python-six)))
     (home-page
      "https://github.com/GoogleCloudPlatform/google-auth-library-python-httplib2")
@@ -159,7 +177,7 @@
        ("python-google-auth" ,python-google-auth)
        ("python-google-auth-httplib2"
         ,python-google-auth-httplib2)
-       ("python-httplib2" ,python-httplib2)
+       ("python-httplib2" ,python-httplib20)
        ("python-six" ,python-six)
        ("python-uritemplate" ,python-uritemplate)))
     (home-page
