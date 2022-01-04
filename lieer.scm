@@ -210,6 +210,29 @@ Templates.")
      "Google API Client Library for Python")
     (license license:asl2.0)))
 
+(define-public python-oauth2client-httplib20
+  (package
+    (name "python-oauth2client")
+    (version "4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "oauth2client" version))
+       (sha256
+        (base32
+         "1irqqap2zibysf8dba8sklfqikia579srd0phm5n754ni0h59gl0"))))
+    (build-system python-build-system)
+    (arguments
+     `(#:tests? #f))
+    (propagated-inputs
+     (list python-httplib20 python-pyasn1 python-pyasn1-modules python-rsa
+           python-six))
+    (home-page "https://github.com/google/oauth2client/")
+    (synopsis "OAuth 2.0 client library")
+    (description "@code{python-oauth2client} provides an OAuth 2.0 client
+library for Python")
+    (license license:asl2.0)))
+
 (define-public python-lieer
   (package
     (name "python-lieer")
@@ -228,7 +251,7 @@ Templates.")
      `(("python-google-api-python-client"
         ,python-google-api-python-client)
        ("python-notmuch" ,python-notmuch)
-       ("python-oauth2client" ,python-oauth2client)
+       ("python-oauth2client" ,python-oauth2client-httplib20)
        ("python-tqdm" ,python-tqdm)))
     (home-page "https://github.com/gauteh/lieer")
     (synopsis
