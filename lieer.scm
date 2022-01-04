@@ -202,7 +202,7 @@ Templates.")
         ,python-google-auth-httplib2)
        ("python-httplib2" ,python-httplib20)
        ("python-six" ,python-six)
-       ("python-uritemplate" ,python-uritemplate3)))
+       ("python-uritemplate" ,python-uritemplate-3)))
     (home-page
      "https://github.com/googleapis/google-api-python-client/")
     (synopsis "Google API Client Library for Python")
