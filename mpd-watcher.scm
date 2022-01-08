@@ -22,7 +22,8 @@
    (build-system python-build-system)
    (arguments
     '(#:tests? #f
-      ))
+      (modify-phases %standard-phases
+                     (delete 'sanity-check))))
    (native-inputs
     `(("python-mpd2" ,python-mpd2)
       ("dynaconf" ,dynaconf)))
