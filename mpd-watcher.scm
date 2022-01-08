@@ -18,7 +18,7 @@
            (commit (string-append "v" version))))
      (file-name (git-file-name name version))
      (sha256
-      (base32 "0vralrhzzld3b1mdw92ic0yw64nafkiks9qvjh9sgp2ff9f66lxp"))))
+      (base32 "1071pqx0xqvplkkx64qawcqdpj3ldgnfx1hk7di1wgv6zcj9337k"))))
    (build-system python-build-system)
    (arguments
     '(#:tests? #f
