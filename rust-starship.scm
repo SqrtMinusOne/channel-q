@@ -1506,7 +1506,7 @@ Argument Parser")
     (arguments
      `(#:tests? #f
        ;; #:features '("edition2021")
-       #:rust ,rust-1.57
+       ;; #:rust ,rust-1.57
        #:cargo-inputs
        (("rust-ansi-term" ,rust-ansi-term-0.12)
         ("rust-attohttpc" ,rust-attohttpc-0.18)
