@@ -11,44 +11,56 @@
 
 (define-public python-libtmux-0.10
   (package
-   (name "python-libtmux")
-   (version "0.10.1")
-   (source
-    (origin
-     (method url-fetch)
-     (uri (pypi-uri "libtmux" version))
-     (sha256
-      (base32
-       "0qbbna7fkfvazhg3pr91rakkpj51cfa42kkh72aqkfhnjr4q3g68"))))
-   (build-system python-build-system)
-   (arguments
-    '(#:tests? #f))
-   (home-page
-    "https://github.com/tmux-python/libtmux")
-   (synopsis "scripting library / orm for tmux")
-   (description "scripting library / orm for tmux")
-   (license license:expat)))
+    (name "python-libtmux")
+    (version "0.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "libtmux" version))
+       (sha256
+        (base32
+         "0qbbna7fkfvazhg3pr91rakkpj51cfa42kkh72aqkfhnjr4q3g68"))))
+    (build-system python-build-system)
+    (arguments
+     '(#:tests? #f))
+    (home-page
+     "https://github.com/tmux-python/libtmux")
+    (synopsis "scripting library / orm for tmux")
+    (description "scripting library / orm for tmux")
+    (license license:expat)))
+
+(define-public python-pyyaml-5.4.1
+  (package
+    (inherit python-pyyaml)
+    (version "5.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "PyYAML" version))
+       (sha256
+        (base32
+         "0pm440pmpvgv5rbbnm8hk4qga5a292kvlm1bh3x2nwr8pb5p8xv0"))))))
 
 (define-public python-kaptan
   (package
-   (name "python-kaptan")
-   (version "0.5.12")
-   (source
-    (origin
-     (method url-fetch)
-     (uri (pypi-uri "kaptan" version))
-     (sha256
-      (base32
-       "1lix7hafsqdpdmiyihykymb1x9bp2s02ik0smzjzq8hlfdb1zg8s"))))
-   (build-system python-build-system)
-   (propagated-inputs
-    `(("python-pyyaml" ,python-pyyaml)))
-   (arguments
-    '(#:tests? #f))
-   (home-page "https://github.com/emre/kaptan")
-   (synopsis "Configuration manager")
-   (description "Configuration manager")
-   (license license:bsd-3)))
+    (name "python-kaptan")
+    (version "0.5.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (pypi-uri "kaptan" version))
+       (sha256
+        (base32
+         "1lix7hafsqdpdmiyihykymb1x9bp2s02ik0smzjzq8hlfdb1zg8s"))))
+    (build-system python-build-system)
+    (propagated-inputs
+     `(("python-pyyaml" ,python-pyyaml-5.4.1)))
+    (arguments
+     '(#:tests? #f))
+    (home-page "https://github.com/emre/kaptan")
+    (synopsis "Configuration manager")
+    (description "Configuration manager")
+    (license license:bsd-3)))
 
 (define-public python-tmuxp
   (package
