@@ -17,6 +17,7 @@ I'll probably push what I can upstream when I figure Guix out.
 | [[https://github.com/fdw/rofimoji/][rofimoji]]                   | OK       | But I had to create setup.py myself                   |
 | [[https://github.com/deajan/osync][osync]]                      | Works    | Requires shell commands as propagated-inputs          |
 | [[https://github.com/jdepoix/youtube-transcript-api][youtube-transcript-api]]     | Works    | Tests fail                                            |
+| [[https://github.com/PaulJuliusMartinez/jless][jless]]                      | Works    | Installation from binaries                            |
 | [[https://github.com/latex-lsp/texlab/][texlab]]                     | Works    | Installation from binaries                            |
 | [[https://gohugo.io/][hugo]]                       | Works    | Installation from binaries                            |
 | [[https://www.nushell.sh/][nushell]]                    | Works    | Installation from binaries (Guix version is outdated) |
