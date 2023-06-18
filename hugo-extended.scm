@@ -9,7 +9,7 @@
 (define-public hugo-extended
   (package
     (name "hugo-extended")
-    (version "0.87.0")
+    (version "0.113.0")
     (source
      (origin
        (method url-fetch)
@@ -21,7 +21,7 @@
              "_Linux-64bit.tar.gz"))
        (sha256
         (base32
-         "0q52b5kllbc0zzxgvjfk2l3njgadwly52vr9h4ww02b8q29ay5pj"))))
+         "1wr3j4l5sj7l8piay71i7l99avqxna78bg033izp4v6zh7xcqjz0"))))
     (inputs
      `(("libgccjit" ,libgccjit)))
     (build-system binary-build-system)
