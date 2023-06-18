@@ -10,7 +10,7 @@
 (define-public starship
   (package
     (name "starship-bin")
-    (version "1.12.0")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
@@ -20,21 +20,21 @@
              "/starship-x86_64-unknown-linux-gnu.tar.gz"))
        (sha256
         (base32
-         "0zq5mn8m3jaqhx1px108izh5ibi23jcwy0wragip8dy1swb3kzr3"))))
+         "05dn81h699jjw8q1x1kv28mlk02a3rlirm1p1xwph1j5z8a9a9np"))))
     (build-system binary-build-system)
     (arguments
      `(#:install-plan
        `(("starship" "/bin/"))
        #:patchelf-plan
-       `(("starship" ("gcc:lib" "glibc")))
+       `(("starship" ("libgccjit" "glibc")))
        #:phases
        (modify-phases %standard-phases
          (replace 'unpack
            (lambda* (#:key inputs #:allow-other-keys)
              (invoke "tar" "-xvzf" (assoc-ref inputs "source")))))))
     (inputs
-     `(("gcc:lib" ,gcc "lib")
-       ("glibc" ,glibc)))
+     `(("glibc" ,glibc)
+       ("libgccjit" ,libgccjit)))
     (native-inputs
      `(("gzip" ,gzip)))
     (synopsis "Starship is the minimal, blazing fast, and extremely customizable prompt for any shell!")

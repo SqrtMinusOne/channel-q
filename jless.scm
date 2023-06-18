@@ -27,9 +27,9 @@
      `(#:install-plan
        `(("jless" "/bin/"))
        #:patchelf-plan
-       `(("jless" ("glibc" "libxcb" "gcc:lib")))))
+       `(("jless" ("glibc" "libxcb" "libgccjit")))))
     (inputs
-     `(("gcc:lib" ,gcc "lib")
+     `(("libgccjit" ,libgccjit)
        ("glibc" ,glibc)
        ("libxcb" ,libxcb)))
     (native-inputs
