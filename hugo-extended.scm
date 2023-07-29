@@ -6,6 +6,10 @@
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (nonguix build-system binary))
 
+(define libstdc++
+  ;; Libstdc++ matching the default GCC.
+  (make-libstdc++ gcc))
+
 (define-public hugo-extended
   (package
     (name "hugo-extended")
@@ -31,14 +35,15 @@
        #:install-plan
        `(("hugo" "/bin/"))
        #:patchelf-plan
-       `(("hugo" ("libgccjit")))
+       `(("hugo" ("libgccjit" "libstdc++")))
        #:phases
        (modify-phases %standard-phases
          (replace 'unpack
            (lambda* (#:key inputs #:allow-other-keys)
              (invoke "tar" "-xvzf" (assoc-ref inputs "source")))))))
     (native-inputs
-     `(("gzip" ,gzip)))
+     `(("gzip" ,gzip)
+       ("libstdc++" ,libstdc++)))
     (synopsis "The world’s fastest framework for building websites.")
     (description "Hugo is a static HTML and CSS website generator
 written in Go. It is optimized for speed, ease of use, and
