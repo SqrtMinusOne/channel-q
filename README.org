@@ -24,6 +24,7 @@ I'll probably push what I can upstream when I figure Guix out.
 | [[https://www.nushell.sh/][nushell]]                    | Works    | Installation from binaries (Guix version was outdated when I created this) |
 | [[https://gohugo.io/][hugo-extended]]              | Works    | Installation from binaries                                                 |
 | [[https://github.com/mamba-org/mamba][micromamba]]                 | Works    | Installation from binaries                                                 |
+| [[https://github.com/ClementTsang/bottom][bottom]]                     | Works    | Installation from binaries                                                 |
 | [[https://github.com/atreyasha/i3-balance-workspace][i3-balance-workspace]]       | Works    | Tests fail                                                                 |
 | [[https://github.com/tmux-python/tmuxp][tmuxp]]                      | Works    | Tests fail                                                                 |
 | [[https://github.com/hroptatyr/dateutils][dateutils]]                  | Works    | Tests fail                                                                 |
