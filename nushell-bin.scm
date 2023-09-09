@@ -15,7 +15,7 @@
 (define-public nushell-bin
   (package
     (name "nushell-bin")
-    (version "0.73.0")
+    (version "0.84.0")
     (source
      (origin
        (method url-fetch)
@@ -24,7 +24,7 @@
              "nu-" version "-x86_64-unknown-linux-gnu.tar.gz"))
        (sha256
         (base32
-         "1k4jz4hcplvizpn38bww4za4vpffap1klndndinv3jx40yrdysgj"))))
+         "095np8i76qhb5dac111z2h5dxwlldqmaqlyx868qyvs4z8m2j9a2"))))
     (build-system binary-build-system)
     (arguments
      `(#:phases
