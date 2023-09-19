@@ -5,18 +5,18 @@
   #:use-module (guix download)
   #:use-module (guix git-download))
 
-(define-public tdlib-1.8.15
+(define-public tdlib-1.8.16
   (package
    (inherit tdlib)
-   (name "tdlib-1.8.15")
-   (version "1.8.15")
+   (name "tdlib-1.8.16")
+   (version "1.8.16")
    (source (origin
             (method git-fetch)
             (uri (git-reference
                   (url "https://github.com/tdlib/td")
-                  (commit "53888437cf11aca258aae7e76552a38c1750d6e7")))
+                  (commit "cde095db6c75827fe4bd237039574aad373ad96b")))
             (file-name (git-file-name "tdlib" version))
             (sha256
              (base32
-              "0wia0s5ff12pf9d07psm8h8x5y2prsv8kmd240yg5s4xpcr8a3wi"))))
+              "1zzacz2mhjmc36aqdc5v8a7zdi0mi7k8hnrnpj9gii061pm4vx4v"))))
    (arguments '(#:tests? #f))))
