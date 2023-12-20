@@ -11,16 +11,16 @@
 (define-public whisper-cpp
   (package
     (name "whisper-cpp")
-    (version "1.4.0")
+    (version "1.5.2")
     (source (origin
               (method git-fetch)
               (uri (git-reference
                     (url "https://github.com/ggerganov/whisper.cpp/")
-                    (commit "85ed71aaec8e0612a84c0b67804bde75aa75a273")))
+                    (commit "9286d3f584240ba58bd44a1bd1e85141579c78d4")))
               (file-name (git-file-name name version))
               (sha256
                (base32
-                "1gfjx5s1mz3ja5x1v3hx1p76v9xz5kd7c8n0p6hihkgmx1gl2p3y"))))
+                "0322ylm2804amis8kizasvfvfci7cmg3nzqanrq9lfa3gpkbbph5"))))
     (build-system gnu-build-system)
     (arguments
      '(#:tests? #f ;; No tests
@@ -28,12 +28,16 @@
        #:phases
        (modify-phases %standard-phases
          (delete 'configure) ;; No configure script
+         (add-after 'build 'make-stream
+           (lambda _ (invoke "make" "stream")))
          (replace 'install ;; Makefile doesn't provide "install"
            (lambda* (#:key outputs #:allow-other-keys)
              (let ((bin (string-append (assoc-ref outputs "out") "/bin")))
                (rename-file "main" "whisper-cpp")
                (rename-file "bench" "whisper-cpp-bench")
                (rename-file "quantize" "whisper-cpp-quantize")
+               (rename-file "server" "whisper-cpp-server")
+               (rename-file "stream" "whisper-cpp-stream")
                (substitute* "models/download-ggml-model.sh"
                  (("cd \"\\$models_path\"") "")
                  (("models_path=\"\\$\\(get_script_path\\)\"") "")
@@ -43,7 +47,9 @@
                (install-file "models/download-ggml-model.sh" bin)
                (install-file "whisper-cpp" bin)
                (install-file "whisper-cpp-bench" bin)
-               (install-file "whisper-cpp-quantize" bin)))))))
+               (install-file "whisper-cpp-quantize" bin)
+               (install-file "whisper-cpp-server" bin)
+               (install-file "whisper-cpp-stream" bin)))))))
     (synopsis "Port of OpenAI's Whisper model in C/C++ ")
     (native-inputs
      `(("coreutils-minimal" ,coreutils-minimal)
