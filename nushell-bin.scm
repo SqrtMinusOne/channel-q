@@ -41,7 +41,8 @@
          ("nushell/nu_plugin_example" ("glibc" "libgccjit"))
          ("nushell/nu_plugin_gstat" ("glibc" "libgccjit" "zlib"))
          ("nushell/nu_plugin_inc" ("glibc" "libgccjit"))
-         ("nushell/nu_plugin_query" ("glibc" "libgccjit")))))
+         ("nushell/nu_plugin_query" ("glibc" "libgccjit"))
+         ("nushell/nu_plugin_formats" ("glibc" "libgccjit")))))
     (inputs
      `(("curl" ,curl)
        ("libgccjit" ,libgccjit)
