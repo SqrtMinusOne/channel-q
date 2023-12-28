@@ -38,7 +38,7 @@
                                 (mkdir-p "difft")
                                 (invoke "tar" "xvzf" (assoc-ref inputs "source") "-C" "difft"))))
       #:install-plan
-      `(("difft" "/bin/"))
+      `(("difft/difft" "/bin/"))
       #:patchelf-plan
       `(("difft/difft" ("glibc" "libgccjit" "libstdc++")))))
    (inputs
