@@ -35,12 +35,11 @@
       (modify-phases %standard-phases
                      (replace 'unpack
                               (lambda* (#:key inputs #:allow-other-keys)
-                                (mkdir-p "difft")
-                                (invoke "tar" "xvzf" (assoc-ref inputs "source") "-C" "difft"))))
+                                (invoke "tar" "xvzf" (assoc-ref inputs "source")))))
       #:install-plan
-      `(("difft/difft" "/bin/"))
+      `(("difft" "/bin/"))
       #:patchelf-plan
-      `(("difft/difft" ("glibc" "libgccjit" "libstdc++")))))
+      `(("difft" ("glibc" "libgccjit" "libstdc++")))))
    (inputs
     `(("curl" ,curl)
       ("libgccjit" ,libgccjit)
