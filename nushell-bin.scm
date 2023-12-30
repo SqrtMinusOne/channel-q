@@ -29,6 +29,7 @@
     (arguments
      `(#:phases
        (modify-phases %standard-phases
+         (delete 'binary-unpack)
          (replace 'unpack
            (lambda* (#:key inputs #:allow-other-keys)
              (mkdir-p "nushell")

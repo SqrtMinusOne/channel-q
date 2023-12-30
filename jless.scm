@@ -24,7 +24,10 @@
          "0fb9f66qc8shrsv1lffsdq78hc9cb6bddhml5zhv5bcm9pds7q2l"))))
     (build-system binary-build-system)
     (arguments
-     `(#:install-plan
+     `(#:phases
+       (modify-phases %standard-phases
+         (delete 'binary-unpack))
+       #:install-plan
        `(("jless" "/bin/"))
        #:patchelf-plan
        `(("jless" ("glibc" "libxcb" "libgccjit")))))

@@ -28,6 +28,7 @@
        `(("texlab" ("libgccjit")))
        #:phases
        (modify-phases %standard-phases
+         (delete 'binary-unpack)
          (replace 'unpack
            (lambda* (#:key inputs #:allow-other-keys)
              (invoke "tar" "-xvzf" (assoc-ref inputs "source")))))))
